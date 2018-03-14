@@ -8,7 +8,7 @@ public class Deck {
 		{
 			for(int y = 0; y < suit.length; y++)
 			{
-				unDealt.add()
+				unDealt.add(new Card());
 			}
 		}
 	}
