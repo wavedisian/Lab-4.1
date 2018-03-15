@@ -33,7 +33,14 @@ public class Card {
 	
 	public int suitRank()
 	{
-		
+		for(int x = 0; x < 4; x++)
+		{
+			if(this.suitrank[x].compareTo(this.suit)==0)
+			{
+				return x;
+			}
+		}
+		return -1;
 	}
 	
 	public int compareTo(Card other)
@@ -44,11 +51,22 @@ public class Card {
 		}
 		if(this.value == other.getValue()) 
 		{
-			if()
+			if(this.suitRank() > other.suitRank())
+			{
+				return 1;
+			}
+			if(this.suitRank() == other.suitRank())
+			{
+				return 0;
+			}
+			else
+			{
+				return -1;
+			}
 		}
 		else
 		{
-			
+			return -1;
 		}
 	}
 	
