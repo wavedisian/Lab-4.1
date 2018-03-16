@@ -2,7 +2,7 @@ package cardsAndDecks;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.
+
 
 public class Deck {
 
@@ -43,15 +43,39 @@ public class Deck {
 		return x;
 	}
 	
-	public shuffle()
+	public void shuffle()
 	{
+		int length = this.size()-1;
 		int r;
 		for(int k = this.size()-1; k > 0; k--)
 		{
-			r = (int) (k*(Math.random()));
-			Collections.swap(unDealt, k, r);
+			r = (int) (length*(Math.random()));
+			this.swap(k, r);
 		}
 	}
+	
+	public void bridge()
+	{
+		ArrayList<Card> bridged = new ArrayList<Card>();
+		int L = 0;
+		int M = this.size()/2-1;
+		while(L + M < this.size())
+		{
+			bridged.add(unDealt.get(L));
+			L++;
+			bridged.add(unDealt.get(M));
+			M++;
+		}
+		unDealt = bridged;
+	}
+	
+	public void swap(int x, int y)
+	{
+		Card temp = unDealt.get(x);
+		unDealt.set(x, unDealt.get(y));
+		unDealt.set(y, temp);
+	}
+	
 	
 	
 }
