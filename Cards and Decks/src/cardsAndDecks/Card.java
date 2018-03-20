@@ -31,6 +31,11 @@ public class Card {
 		return this.name + " of " + this.suit;
 	}
 	
+	public void print()
+	{
+		System.out.print(this.toString());
+	}
+	
 	public int suitRank()
 	{
 		for(int x = 0; x < 4; x++)
